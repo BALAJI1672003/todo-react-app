@@ -12,8 +12,8 @@ mongoose.connect(process.env.MONGO_URL)
     console.error('Database connection error:', err);
     process.exit(1);
   });
-app.use('/api/routes',require('./routes/todo-routes'));
+app.use('/api/todos',require('./routes/todo-routes'));
 app.listen(port,()=>
 {
-    console.log('The server is running');
+    console.log(`The server is running ${port}`);
 })
